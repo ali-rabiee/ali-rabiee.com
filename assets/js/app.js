@@ -28,9 +28,6 @@ const renderGallery = () => {
   const slides = siteContent.gallery || [];
   if (!galleryEl || !slides.length) return;
   galleryEl.innerHTML = `
-    <header class="gallery-header">
-      <p class="eyebrow">Field Highlights</p>
-    </header>
     <div class="swiper mediaSwiper">
       <div class="swiper-wrapper">
         ${slides
@@ -57,6 +54,28 @@ const renderAboutMe = () => {
     <div class="about-me-content">
       <h2>${aboutMe.title}</h2>
       <p>${aboutMe.content}</p>
+    </div>
+  `;
+};
+
+const renderHighlights = () => {
+  const highlightsEl = qs("#highlights");
+  if (!highlightsEl) return;
+  const { highlights } = siteContent;
+  highlightsEl.innerHTML = `
+    <div class="highlights-grid">
+      ${highlights
+        .map(
+          (item, index) => `
+        <div class="highlight-card" style="animation-delay: ${index * 0.1}s">
+          <div class="highlight-card__value">${item.value}</div>
+          <div class="highlight-card__label">${item.label}</div>
+        </div>`
+        )
+        .join("")}
+    </div>
+    <div class="highlights-banner" style="animation-delay: 0.4s">
+      <p>I bring creative problem-solving to novel AI–robotics pipelines, collaborate effectively across teams, and mentor students toward successful project outcomes.</p>
     </div>
   `;
 };
@@ -423,9 +442,8 @@ const setYear = () => {
 
 renderGallery();
 renderAboutMe();
+renderHighlights();
 renderProfileRail();
-renderHero();
-renderAbout();
 renderSkills();
 renderProjects();
 renderNews();

@@ -54,6 +54,12 @@ export const siteContent = {
     title: "About Me",
     content: "I'm Ali! Ph.D. candidate and University Fellow in Electrical Engineering with 5+ years of experience in machine learning research, robotics, and applied industry work as a Machine Learning Engineer. My work spans robotics, reinforcement learning, computer vision, multimodal signal processing (EEG, EMG, acoustic), and generative AI systems. My current focus is human-in-the-loop intelligent systems for assistive and neurorobotic applications. Proficient in Python, C/C++, MATLAB, PyTorch, TensorFlow, ROS, and modern deep-learning/RL toolchains, with publications in top-tier venues and patents filed in LLM-based assistive copilot systems."
   },
+  highlights: [
+    { value: "5+", label: "years of ML and robotics research experience" },
+    { value: "2+", label: "years of applied industry experience in machine learning" },
+    { value: "10+", label: "publications in top-tier journals and conferences" },
+    { value: "5+", label: "prototypes on shared-autonomy and RL frameworks" },
+  ],
   about: {
     intro:
       "Graduate Research Assistant at the Translational Neurorobotics Lab, building biosignal-aware autonomy and BCIs for assistive robots. Previously Machine Learning Engineer at HARA AI and researcher at Sharif University.",
