@@ -49,8 +49,11 @@ export const siteContent = {
     { src: "/assets/images/media_6.JPG", alt: "Field trial snapshot" },
     { src: "/assets/images/media_7.jpg", alt: "Workshop presentation" },
     { src: "/assets/images/media_8.jpg", alt: "Conference demo booth" },
-    { src: "/assets/images/my-photo.jpg", alt: "Portrait of Ali Rabiee" },
   ],
+  aboutMe: {
+    title: "About Me",
+    content: "I'm Ali! Ph.D. candidate and University Fellow in Electrical Engineering with 5+ years of experience in machine learning research, robotics, and applied industry work as a Machine Learning Engineer. My work spans robotics, reinforcement learning, computer vision, multimodal signal processing (EEG, EMG, acoustic), and generative AI systems. My current focus is human-in-the-loop intelligent systems for assistive and neurorobotic applications. Proficient in Python, C/C++, MATLAB, PyTorch, TensorFlow, ROS, and modern deep-learning/RL toolchains, with publications in top-tier venues and patents filed in LLM-based assistive copilot systems."
+  },
   about: {
     intro:
       "Graduate Research Assistant at the Translational Neurorobotics Lab, building biosignal-aware autonomy and BCIs for assistive robots. Previously Machine Learning Engineer at HARA AI and researcher at Sharif University.",

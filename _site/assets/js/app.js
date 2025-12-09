@@ -30,7 +30,6 @@ const renderGallery = () => {
   galleryEl.innerHTML = `
     <header class="gallery-header">
       <p class="eyebrow">Field Highlights</p>
-      <h2>Snapshots from the lab, deployments, and conferences.</h2>
     </header>
     <div class="swiper mediaSwiper">
       <div class="swiper-wrapper">
@@ -46,6 +45,18 @@ const renderGallery = () => {
       <div class="swiper-pagination"></div>
       <div class="swiper-button-next"></div>
       <div class="swiper-button-prev"></div>
+    </div>
+  `;
+};
+
+const renderAboutMe = () => {
+  const aboutMeEl = qs("#aboutMe");
+  if (!aboutMeEl) return;
+  const { aboutMe } = siteContent;
+  aboutMeEl.innerHTML = `
+    <div class="about-me-content">
+      <h2>${aboutMe.title}</h2>
+      <p>${aboutMe.content}</p>
     </div>
   `;
 };
@@ -411,6 +422,7 @@ const setYear = () => {
 };
 
 renderGallery();
+renderAboutMe();
 renderProfileRail();
 renderHero();
 renderAbout();
