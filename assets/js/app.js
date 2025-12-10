@@ -329,10 +329,6 @@ const renderNews = () => {
 
 const renderExperience = () => {
   qs("#experience").innerHTML = `
-    <header>
-      <p class="eyebrow">Experience</p>
-      <h2>Scaling research with hands-on engineering.</h2>
-    </header>
     <div class="grid grid--two">
       <div>
         <h3>Work</h3>
@@ -363,9 +359,13 @@ const renderTimelineEntry = (entry) => `
 const renderPublications = () => {
   const groups = siteContent.publications;
   qs("#publications").innerHTML = `
-    <header>
-      <p class="eyebrow">Publications</p>
-      <h2>Publishing across robotics, neuroscience, and ML.</h2>
+    <header class="header-with-icon">
+      <h2>Publications</h2>
+      <a href="https://scholar.google.com/citations?user=FoWitbgAAAAJ&hl=en" target="_blank" rel="noopener" class="scholar-link" aria-label="View on Google Scholar">
+        <svg viewBox="0 0 24 24" width="28" height="28" fill="currentColor">
+          <path d="M12 2 2 7l10 5 8.5-4.25V17H22V7zm0 7L5.5 7 12 3.5 18.5 7Zm-5.25 6A3.75 3.75 0 0 0 3 18.75V21h1.5v-2.25a2.25 2.25 0 0 1 4.5 0V21H10v-2.25A3.75 3.75 0 0 0 6.75 15Zm10.5 0A3.75 3.75 0 0 0 13.5 18.75V21H15v-2.25a2.25 2.25 0 0 1 4.5 0V21H21v-2.25A3.75 3.75 0 0 0 17.25 15Z"/>
+        </svg>
+      </a>
     </header>
     <div class="publication-groups">
       ${Object.entries(groups)
