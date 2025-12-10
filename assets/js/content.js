@@ -128,6 +128,32 @@ export const siteContent = {
       ],
     },
   ],
+  technicalSkills: [
+    {
+      category: "Programming",
+      tools: "Python, C/C++, MATLAB, SQL",
+    },
+    {
+      category: "Machine Learning & AI",
+      tools: "TensorFlow, PyTorch, torchvision, Scikit-learn, Keras, OpenAI Gym, OpenCV, PIL",
+    },
+    {
+      category: "Robotics",
+      tools: "ROS, MoveIt, PyBullet, Gazebo",
+    },
+    {
+      category: "Data Analysis & Visualization",
+      tools: "NumPy, Pandas, Matplotlib, Seaborn, Plotly, SKLearn, SciPy",
+    },
+    {
+      category: "Tools",
+      tools: "Git, GitHub, Docker, Kubernetes, Streamlit, Hugging Face, AWS",
+    },
+    {
+      category: "Hardware",
+      tools: "Sensor fusion, Microcontroller programming (Arduino, Raspberry Pi)",
+    },
+  ],
   projects: [
     {
       title: "STREAMS · Multimodal Shared Autonomy",

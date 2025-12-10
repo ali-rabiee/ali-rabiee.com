@@ -193,6 +193,21 @@ const renderSkills = () => {
         )
         .join("")}
     </div>
+    
+    <div class="technical-skills-section">
+      <h3 class="technical-skills-title">Technical Skills</h3>
+      <div class="technical-skills-grid">
+        ${siteContent.technicalSkills
+          .map(
+            (skill) => `
+          <div class="technical-skill-item">
+            <strong>${skill.category}:</strong>
+            <span>${skill.tools}</span>
+          </div>`
+          )
+          .join("")}
+      </div>
+    </div>
   `;
 };
 
