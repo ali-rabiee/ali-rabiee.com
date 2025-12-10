@@ -52,7 +52,73 @@ export const siteContent = {
   ],
   aboutMe: {
     title: "About Me",
-    content: "I'm Ali! Ph.D. candidate and University Fellow in Electrical Engineering with 5+ years of experience in machine learning research, robotics, and applied industry work as a Machine Learning Engineer. My work spans robotics, reinforcement learning, computer vision, multimodal signal processing (EEG, EMG, acoustic), and generative AI systems. My current focus is human-in-the-loop intelligent systems for assistive and neurorobotic applications. Proficient in Python, C/C++, MATLAB, PyTorch, TensorFlow, ROS, and modern deep-learning/RL toolchains, with publications in top-tier venues and patents filed in LLM-based assistive copilot systems."
+    content: "I'm Ali! Ph.D. candidate and University Fellow in Electrical Engineering with 5+ years of experience in machine learning research, robotics, and applied industry work as a Machine Learning Engineer. My work spans robotics, reinforcement learning, computer vision, multimodal signal processing (EEG, EMG, acoustic), and generative AI systems. My current focus is human-in-the-loop intelligent systems for assistive and neurorobotic applications. Proficient in Python, C/C++, MATLAB, PyTorch, TensorFlow, ROS, and modern deep-learning/RL toolchains, with publications in top-tier venues and patents filed in LLM-based assistive copilot systems.",
+    education: [
+      {
+        degree: "Ph.D. in Electrical Engineering (AI and Robotics)",
+        period: "Jan 2023 - Sep 2026",
+        institution: "University of Rhode Island, RI, US",
+        details: "Dissertation: Biosignal-based Shared Autonomy Paradigms for User-machine Interfaces (GPA: 3.90/4.00)",
+      },
+      {
+        degree: "M.S. in Computer Engineering (AI and Robotics)",
+        period: "Sep 2020 - Sep 2022",
+        institution: "Sharif University of Technology",
+        details: "Thesis: Portfolio Formation Using Deep Learning (GPA: 4.00/4.00)",
+      },
+      {
+        degree: "B.S. in Electrical Engineering (Control Systems)",
+        period: "Sep 2015 - Sep 2020",
+        institution: "K. N. Toosi University of Technology",
+        details: "Thesis: Design and Fabrication of a Novel and Cost Friendly Fire Alarm System (GPA: 3.52/4.00)",
+      },
+    ],
+    experience: [
+      {
+        role: "Ph.D. Candidate in Machine Learning & Robotics",
+        period: "Jan 2023 - Present",
+        organization: "University of Rhode Island (TNLab), Funded by URI Fellowship and NSF",
+        bullets: [
+          "Enhanced multimodal frameworks for shared autonomy by combining imitation learning, computer vision, and reinforcement learning that reduced required user inputs by 45%, lowered NASA-TLX workload scores by more than 50%, and increased success rate by 35%.",
+          "Built and tested robotic control systems in ROS, enabling seamless simulation-to-real (Sim2Real) transfer of RL models from simulated tasks to real-world assistive platforms, retaining 90% of simulated performance.",
+          "Improved an RL controller that fuses noisy head-movement inputs with RGB-D vision, raising reach-to-grasp success from 44% to 83% in zero-shot Sim2Real trials (98% in simulation) and cutting subjective task load by 45%.",
+          "Leveraged GPT4o-based dialogue layer to enhance interactive capabilities and natural language communication, facilitating more efficient and adaptable human-in-the-loop control in assistive robotics, and resulting in a provisional patent on language-driven assistive control.",
+          "Led capstone teams working with diverse software and hardware systems, including motion capture setups and robotic platforms; authored peer-reviewed papers, directed experiments, supported grant proposals, managed data collection and study design, presented findings at conferences, and contributed to the journal peer-review process.",
+        ],
+      },
+      {
+        role: "Robotics & Reinforcement Learning Engineer Intern",
+        period: "Sep 2025 - Dec 2025",
+        organization: "Familiar Machines & Magic — Physical AI startup building embodied AI systems",
+        bullets: [
+          "Developed advanced locomotion and pose-control policies for quadruped robots in Isaac Sim / Isaac Lab, leveraging PPO and generative action models to achieve a unified policy capable of over 200+ gait styles and poses.",
+          "Designed a Generative Action Policy Architecture enabling style-conditioned gait modulation, improving policy generalization, versatility, and zero-shot adaptation across terrains and dynamic scenarios.",
+          "Enhanced control stability by reducing the action-rate L2 by 80%, resulting in significantly smoother joint commands and 70% improvement in robustness to external disturbances, domain randomization, and push-recovery tests.",
+          "Integrated LLM-based Inner Monologue to enable emotion-aware, expressive robot behaviors and more transparent human–robot interaction.",
+        ],
+      },
+      {
+        role: "Machine Learning Engineer",
+        period: "Mar 2021 - Jul 2022",
+        organization: "HARA AI (hara.ai)",
+        bullets: [
+          "Designed and implemented custom computer vision architectures for vehicle analysis tasks including model recognition, color detection, and fine-grained damage assessment.",
+          "Improved and optimized vision-based damage and cost estimation models, raising mAP@0.5 IoU from 0.74 to 0.91 and boosting classification accuracy by 15%, while sustaining 45 ms/image inference in production.",
+          "Deployed models via MLflow for real-time, scalable vehicle assessment; curated large-scale image datasets and built streamlined annotation pipelines to improve data quality and training efficiency.",
+          "Led A/B testing and error analysis to iteratively refine model performance and reduce false positives by 12%; presented results to stakeholders, highlighting time savings and improved evaluation consistency.",
+        ],
+      },
+      {
+        role: "Machine Learning Researcher",
+        period: "Sep 2020 - May 2022",
+        organization: "Digital Data Processing Laboratory (DDPL)",
+        bullets: [
+          "Advanced time-series analysis by using various custom deep learning architectures, and designed deep reinforcement learning agents for automated trading bots.",
+          "Enhanced a Bayesian-based classification framework for market trend prediction, hitting 80% accuracy.",
+          "Improved custom deep learning models, including LSTM and GRU architectures, for stock market prediction and financial time-series analysis.",
+        ],
+      },
+    ],
   },
   highlights: [
     { value: "5+", label: "years of ML and robotics research experience" },
@@ -151,7 +217,7 @@ export const siteContent = {
     },
     {
       category: "Hardware",
-      tools: "Sensor fusion, Microcontroller programming (Arduino, Raspberry Pi)",
+      tools: "Sensor fusion, Microcontrollers, Arduino, Raspberry Pi",
     },
   ],
   projects: [

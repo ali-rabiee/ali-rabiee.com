@@ -56,6 +56,47 @@ const renderAboutMe = () => {
         <h2>${aboutMe.title}</h2>
         <p>${aboutMe.content}</p>
       </div>
+      
+      <div class="about-subsection">
+        <h3 class="about-subsection-title">Education</h3>
+        <div class="education-list">
+          ${aboutMe.education
+            .map(
+              (edu) => `
+            <div class="education-item">
+              <div class="education-header">
+                <strong class="education-degree">${edu.degree}</strong>
+                <span class="education-period">${edu.period}</span>
+              </div>
+              <div class="education-institution">${edu.institution}</div>
+              <div class="education-details">${edu.details}</div>
+            </div>`
+            )
+            .join("")}
+        </div>
+      </div>
+
+      <div class="about-subsection">
+        <h3 class="about-subsection-title">Experience</h3>
+        <div class="experience-list">
+          ${aboutMe.experience
+            .map(
+              (exp) => `
+            <div class="experience-item">
+              <div class="experience-header">
+                <strong class="experience-role">${exp.role}</strong>
+                <span class="experience-period">${exp.period}</span>
+              </div>
+              <div class="experience-organization">${exp.organization}</div>
+              <ul class="experience-bullets">
+                ${exp.bullets.map((bullet) => `<li>${bullet}</li>`).join("")}
+              </ul>
+            </div>`
+            )
+            .join("")}
+        </div>
+      </div>
+
       <div class="highlights-grid">
         ${highlights
           .map(
@@ -177,7 +218,7 @@ const renderAbout = () => {
 const renderSkills = () => {
   qs("#skills").innerHTML = `
     <header>
-      <h2>Core Technical Expertise</h2>
+      <h2>Focus Areas</h2>
       <p class="lead">Deep experience across robotics, ML, and intelligent systems - from theory to deployment.</p>
     </header>
     <div class="grid grid--skills">
