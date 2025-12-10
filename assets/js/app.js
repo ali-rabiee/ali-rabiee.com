@@ -256,25 +256,30 @@ const renderProjects = () => {
   qs("#projects").innerHTML = `
     <header>
       <p class="eyebrow">Projects</p>
-      <h2>Systems, toolkits, and experiments in active rotation.</h2>
+      <h2>Featured Work</h2>
       <p class="lead">From Kinova shared autonomy deployments to data-centric EEG tooling, these projects show my range across research and production ML.</p>
     </header>
-    <div class="grid grid--projects">
+    <div class="projects-showcase">
       ${siteContent.projects
         .map(
-          (project) => `
-        <article class="card project-card">
-          <div>
-            <h3>${project.title}</h3>
-            <p>${project.description}</p>
+          (project, index) => `
+        <article class="project-showcase-item" style="animation-delay: ${index * 0.1}s">
+          <div class="project-showcase-content">
+            <div class="project-showcase-header">
+              <h3>${project.title}</h3>
+              ${project.link ? `<a href="${project.link}" target="_blank" rel="noopener" class="github-link" aria-label="View on GitHub">
+                <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+                  <path d="M12 .5C5.648.5.5 5.648.5 12a11.5 11.5 0 0 0 7.859 10.928c.575.107.786-.247.786-.555 0-.274-.01-1-.016-1.964-3.198.695-3.873-1.541-3.873-1.541-.523-1.33-1.277-1.686-1.277-1.686-1.044-.714.079-.699.079-.699 1.154.082 1.762 1.186 1.762 1.186 1.027 1.76 2.695 1.252 3.354.957.104-.743.402-1.252.73-1.54-2.553-.291-5.238-1.276-5.238-5.68 0-1.255.449-2.28 1.184-3.084-.118-.29-.513-1.461.112-3.046 0 0 .967-.31 3.17 1.178a10.92 10.92 0 0 1 2.886-.388c.979.004 1.967.132 2.887.388 2.201-1.488 3.166-1.178 3.166-1.178.627 1.585.233 2.756.115 3.046.737.804 1.183 1.829 1.183 3.084 0 4.417-2.69 5.386-5.256 5.673.414.355.783 1.048.783 2.112 0 1.526-.014 2.757-.014 3.132 0 .31.208.668.794.554A11.503 11.503 0 0 0 23.5 12C23.5 5.648 18.352.5 12 .5Z"/>
+                </svg>
+                View on GitHub
+              </a>` : ""}
+            </div>
+            <p class="project-showcase-description">${project.description}</p>
             <div class="tag-list">
               ${project.tags.map((tag) => `<span class="tag">${tag}</span>`).join("")}
             </div>
           </div>
-          ${project.media ? renderMedia(project.media) : ""}
-          <div class="actions">
-            ${project.link ? `<a href="${project.link}" target="_blank" rel="noopener">View project →</a>` : ""}
-          </div>
+          ${project.media ? renderProjectMedia(project.media) : ""}
         </article>`
         )
         .join("")}
@@ -282,19 +287,19 @@ const renderProjects = () => {
   `;
 };
 
-const renderMedia = (media) => {
+const renderProjectMedia = (media) => {
   if (media.type === "video") {
     return `
-      <div class="media-frame">
-        <video controls preload="metadata">
+      <div class="project-showcase-media">
+        <video autoplay loop muted playsinline preload="auto">
           <source src="${media.src}" type="video/mp4" />
         </video>
       </div>
     `;
   }
   return `
-    <div class="media-frame">
-      <img src="${media.src}" alt="Project media preview" loading="lazy" />
+    <div class="project-showcase-media">
+      <img src="${media.src}" alt="Project preview" loading="lazy" />
     </div>
   `;
 };
