@@ -49,35 +49,34 @@ const renderGallery = () => {
 const renderAboutMe = () => {
   const aboutMeEl = qs("#aboutMe");
   if (!aboutMeEl) return;
-  const { aboutMe } = siteContent;
+  const { aboutMe, highlights } = siteContent;
   aboutMeEl.innerHTML = `
-    <div class="about-me-content">
-      <h2>${aboutMe.title}</h2>
-      <p>${aboutMe.content}</p>
+    <div class="about-me-unified-content">
+      <div class="about-me-content">
+        <h2>${aboutMe.title}</h2>
+        <p>${aboutMe.content}</p>
+      </div>
+      <div class="highlights-grid">
+        ${highlights
+          .map(
+            (item, index) => `
+          <div class="highlight-card" style="animation-delay: ${index * 0.1}s">
+            <div class="highlight-card__value">${item.value}</div>
+            <div class="highlight-card__label">${item.label}</div>
+          </div>`
+          )
+          .join("")}
+      </div>
+      <div class="highlights-banner" style="animation-delay: 0.4s">
+        <p>I bring creative problem-solving to novel AI–robotics pipelines, collaborate effectively across teams, and mentor students toward successful project outcomes.</p>
+      </div>
     </div>
   `;
 };
 
 const renderHighlights = () => {
-  const highlightsEl = qs("#highlights");
-  if (!highlightsEl) return;
-  const { highlights } = siteContent;
-  highlightsEl.innerHTML = `
-    <div class="highlights-grid">
-      ${highlights
-        .map(
-          (item, index) => `
-        <div class="highlight-card" style="animation-delay: ${index * 0.1}s">
-          <div class="highlight-card__value">${item.value}</div>
-          <div class="highlight-card__label">${item.label}</div>
-        </div>`
-        )
-        .join("")}
-    </div>
-    <div class="highlights-banner" style="animation-delay: 0.4s">
-      <p>I bring creative problem-solving to novel AI–robotics pipelines, collaborate effectively across teams, and mentor students toward successful project outcomes.</p>
-    </div>
-  `;
+  // This is now handled in renderAboutMe
+  // Keeping function for backward compatibility
 };
 
 const renderProfileRail = () => {

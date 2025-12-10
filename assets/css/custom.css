@@ -516,25 +516,20 @@ video {
   margin: 0.5rem 0 2.5rem;
 }
 
-.about-me-content {
-  background: linear-gradient(135deg, rgba(79, 155, 255, 0.08), rgba(92, 244, 255, 0.06));
-  border: 1px solid rgba(255, 255, 255, 0.12);
+.about-me-unified-content {
+  background: var(--bg-card);
+  border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: var(--radius-lg);
-  padding: 2.5rem;
+  padding: 2.75rem;
   box-shadow: var(--shadow-card);
+  backdrop-filter: blur(16px);
   position: relative;
   overflow: hidden;
 }
 
-.about-me-content::before {
-  content: "";
-  position: absolute;
-  top: -2px;
-  left: -2px;
-  right: -2px;
-  height: 4px;
-  background: linear-gradient(90deg, var(--brand-blue), var(--brand-cyan), var(--brand-purple));
-  border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+.about-me-content {
+  margin-bottom: 2.5rem;
+  position: relative;
 }
 
 .about-me-content h2 {
@@ -554,6 +549,13 @@ video {
 .highlights-section {
   margin: 1rem 0 2.5rem;
   padding: 0;
+}
+
+.about-me-unified-content .highlights-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
 }
 
 .highlights-grid {
@@ -616,7 +618,6 @@ video {
 }
 
 .highlights-banner {
-  margin-top: 1.5rem;
   background: linear-gradient(135deg, rgba(162, 137, 255, 0.12), rgba(79, 155, 255, 0.08));
   border: 1px solid rgba(255, 255, 255, 0.15);
   border-radius: var(--radius-lg);
@@ -626,6 +627,10 @@ video {
   overflow: hidden;
   animation: fadeInUp 0.6s ease-out backwards;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.about-me-unified-content .highlights-banner {
+  margin-top: 0;
 }
 
 .highlights-banner::before {
@@ -940,7 +945,8 @@ video {
     grid-template-columns: 1fr;
   }
 
-  .highlights-grid {
+  .highlights-grid,
+  .about-me-unified-content .highlights-grid {
     grid-template-columns: 1fr;
     gap: 1rem;
   }
@@ -959,6 +965,15 @@ video {
 
   .highlights-banner p {
     font-size: 0.95rem;
+  }
+
+  .about-me-unified-content {
+    padding: 2rem;
+  }
+
+  .about-me-content {
+    padding: 2rem;
+    margin-bottom: 1.5rem;
   }
 }
 
