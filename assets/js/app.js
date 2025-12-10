@@ -255,9 +255,8 @@ const renderSkills = () => {
 const renderProjects = () => {
   qs("#projects").innerHTML = `
     <header>
-      <p class="eyebrow">Projects</p>
       <h2>Featured Work</h2>
-      <p class="lead">From Kinova shared autonomy deployments to data-centric EEG tooling, these projects show my range across research and production ML.</p>
+      <p class="lead">Multimodal shared autonomy systems, LLM-driven agents, assistive robotics, computer vision pipelines, and signal processing toolkits.</p>
     </header>
     <div class="projects-showcase">
       ${siteContent.projects

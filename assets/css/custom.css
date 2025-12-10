@@ -785,7 +785,8 @@ video {
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
 }
 
-#skills header h2 {
+#skills header h2,
+#projects header h2 {
   font-size: 1.8rem;
   color: var(--brand-cyan);
   letter-spacing: 0.02em;
