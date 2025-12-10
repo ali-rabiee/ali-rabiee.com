@@ -245,7 +245,7 @@ export const siteContent = {
       media: { type: "video", src: "/assets/videos/Kalman1.mp4" },
     },
     {
-      title: "Adaptive DRL for Severe Impairments",
+      title: "AEAS · Adaptive DRL for Augmenting the User Input",
       description:
         "Maps low-DoF inputs to high-dimensional robotic actions, predicting goals in real time to blend user intent with autonomous assistance.",
       tags: ["Accessibility", "Reinforcement Learning"],
@@ -259,14 +259,6 @@ export const siteContent = {
       tags: ["Human-Robot Interaction", "GUI", "IMU"],
       link: "https://github.com/ali-rabiee/ClickMove-Robotics",
       media: { type: "image", src: "/assets/videos/ClickMove_demo.gif" },
-    },
-    {
-      title: "LLM-based Autonomous Sorter",
-      description:
-        "Zero-shot sorting agent that interprets natural-language commands to move simulated objects by color or shape.",
-      tags: ["LLM", "Simulation", "Autonomy"],
-      link: "https://github.com/ali-rabiee/LLM-AutonomousSorter",
-      media: { type: "video", src: "/assets/videos/LLMsorter.mp4" },
     },
     {
       title: "Text-to-Speech Copilot",
@@ -315,14 +307,6 @@ export const siteContent = {
       tags: ["NLP", "Analytics"],
       link: "https://github.com/ali-rabiee/sentiment-analysis",
       media: { type: "image", src: "/assets/images/sentiment.png" },
-    },
-    {
-      title: "GAN & DCGAN for Synthetic Digits",
-      description:
-        "Comparative study of GAN architectures on MNIST with evaluation tooling for image quality and training stability.",
-      tags: ["Generative AI"],
-      link: "https://github.com/ali-rabiee/GAN-digits",
-      media: { type: "image", src: "/assets/images/digits.png" },
     },
   ],
   news: [

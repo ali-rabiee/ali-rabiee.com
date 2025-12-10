@@ -256,7 +256,7 @@ const renderProjects = () => {
   qs("#projects").innerHTML = `
     <header>
       <h2>Featured Work</h2>
-      <p class="lead">Multimodal shared autonomy systems, LLM-driven agents, assistive robotics, computer vision pipelines, and signal processing toolkits.</p>
+      <p class="lead">End-to-end systems spanning shared autonomy, computer vision, signal processing, and generative AI—from research prototypes to production deployments.</p>
     </header>
     <div class="projects-showcase">
       ${siteContent.projects
@@ -290,7 +290,7 @@ const renderProjectMedia = (media) => {
   if (media.type === "video") {
     return `
       <div class="project-showcase-media">
-        <video autoplay loop muted playsinline preload="auto">
+        <video autoplay loop muted playsinline preload="auto" controls>
           <source src="${media.src}" type="video/mp4" />
         </video>
       </div>
