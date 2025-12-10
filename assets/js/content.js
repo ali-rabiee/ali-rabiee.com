@@ -78,36 +78,54 @@ export const siteContent = {
   },
   skills: [
     {
-      title: "Robotics & Autonomy",
+      title: "Robotics & Autonomous Systems",
       items: [
-        "Shared control, sim-to-real verification",
-        "Kinova, GUI+IMU interaction, human-robot teaming",
-        "ROS, MoveIt, Gazebo, PyBullet",
+        "Kinematics, dynamics, and control",
+        "Reinforcement learning & imitation learning for robot policies",
+        "Motion/path planning, HRI, shared autonomy",
+        "Sensor fusion (LiDAR, RGB-D, IMUs) and perception pipelines",
+        "ROS/ROS2 development, simulation (PyBullet, Isaac Lab, Gazebo), sim-to-real transfer",
       ],
     },
     {
-      title: "Reinforcement Learning",
-      items: ["DQN, SAC, PPO, TD3, A3C", "Custom reward shaping & policy distillation", "Assistive DRL systems"],
+      title: "ML & Reinforcement Learning",
+      items: [
+        "Deep RL (PPO, SAC, TD3, DDPG), policy gradients, actor–critic methods",
+        "Imitation & inverse RL, generative skill learning",
+        "Custom reward shaping, curriculum learning, behavior cloning",
+      ],
     },
     {
-      title: "Computer Vision & GenAI",
-      items: ["YOLO, Mask R-CNN, ViT", "LLM-driven perception, NeRF experiments", "GAN/DCGAN pipelines"],
+      title: "Computer Vision & 3D Perception",
+      items: [
+        "CNNs & Vision Transformers",
+        "Object detection, segmentation, pose estimation",
+        "Point clouds, voxel processing, SLAM, multi-view geometry",
+      ],
+    },
+    {
+      title: "NLP & Language Models",
+      items: [
+        "Transformer models (BERT, GPT family, instruction-tuned LLMs)",
+        "Text representation, retrieval, sentiment & intent modeling",
+        "Prompt engineering and agentic/LLM pipeline design",
+      ],
+    },
+    {
+      title: "Generative AI",
+      items: [
+        "Diffusion models, VAEs, GANs",
+        "Multimodal generative systems (text–vision–action models)",
+        "LLM-based copilots for robotics & human-in-the-loop systems",
+      ],
     },
     {
       title: "Signal Processing",
       items: [
-        "EEG decoding, TCRE vs EEG benchmarking",
-        "STFT, wavelets, Hilbert-Huang, Laplacian filtering",
-        "ICA, NMF, adaptive denoising",
+        "Time-series modeling (LSTM/GRU, transformers)",
+        "EEG/EMG/tEEG processing, feature extraction, spectral & time–frequency analysis",
+        "Kalman filtering, ICA/NMF, denoising & sensor enhancement",
       ],
-    },
-    {
-      title: "Software & Ops",
-      items: ["Python, C/C++, MATLAB, SQL", "PyTorch, TensorFlow, Keras", "Docker, Kubernetes, AWS, Hugging Face"],
-    },
-    {
-      title: "Hardware & Tooling",
-      items: ["Sensor fusion, IMUs, vision rigs", "Arduino, Raspberry Pi", "Custom EEG + robotics testbeds"],
     },
   ],
   projects: [

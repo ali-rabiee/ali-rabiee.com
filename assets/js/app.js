@@ -177,15 +177,14 @@ const renderAbout = () => {
 const renderSkills = () => {
   qs("#skills").innerHTML = `
     <header>
-      <p class="eyebrow">Focus Areas</p>
-      <h2>Where I spend most of my build time.</h2>
-      <p class="lead">Each initiative blends ML research rigor, hardware-aware execution, and product intuition.</p>
+      <h2>Core Technical Expertise</h2>
+      <p class="lead">Deep experience across robotics, ML, and intelligent systems - from theory to deployment.</p>
     </header>
-    <div class="grid grid--three">
+    <div class="grid grid--skills">
       ${siteContent.skills
         .map(
           (cluster) => `
-        <article class="card">
+        <article class="card skill-card">
           <h3>${cluster.title}</h3>
           <ul>
             ${cluster.items.map((item) => `<li>${item}</li>`).join("")}
