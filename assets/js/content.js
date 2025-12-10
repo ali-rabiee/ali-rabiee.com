@@ -431,7 +431,7 @@ export const siteContent = {
       { label: "GitHub", href: "https://github.com/ali-rabiee" },
       { label: "Google Scholar", href: "https://scholar.google.com/citations?user=FoWitbgAAAAJ&hl=en" },
     ],
-    availability: "Open to collaborations in autonomy, assistive tech, and mission-critical ML.",
+    availability: "The best way to reach me is via email:",
   },
 };
 
