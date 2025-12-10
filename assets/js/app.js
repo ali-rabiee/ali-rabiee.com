@@ -306,8 +306,7 @@ const renderProjectMedia = (media) => {
 const renderNews = () => {
   qs("#news").innerHTML = `
     <header>
-      <p class="eyebrow">News</p>
-      <h2>Recent signals from the lab.</h2>
+      <h2>News</h2>
       <p class="lead">Milestones, submissions, and conference moments worth sharing.</p>
     </header>
     <div class="news-timeline">
@@ -505,7 +504,6 @@ renderProfileRail();
 renderSkills();
 renderProjects();
 renderNews();
-renderExperience();
 renderPublications();
 renderHonors();
 renderContact();
