@@ -245,7 +245,7 @@ body {
   width: 100%;
   max-width: 100%;
   padding: 0;
-  margin: 0 0 2.5rem;
+  margin: 0 0 1.75rem;
   background: rgba(7, 12, 30, 0.95);
   backdrop-filter: blur(18px);
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
@@ -489,6 +489,7 @@ body {
 .section {
   margin-bottom: 3rem;
   padding: 0 1rem;
+  scroll-margin-top: 7rem; /* Adjust for sticky header height */
 }
 
 .shell {
@@ -682,8 +683,15 @@ body {
   color: rgba(255, 255, 255, 0.85);
 }
 
+/* Specific override to fix width alignment */
+#aboutMe.section,
+#gallery.section {
+  padding-left: 0;
+  padding-right: 0;
+}
+
 .media-slider {
-  padding: 0 1rem 0.5rem;
+  padding: 0 0 1rem;
   margin-bottom: 0;
 }
 
@@ -696,7 +704,8 @@ body {
 }
 
 .media-slider .swiper-slide {
-  height: 320px;
+  /* Prevent the gallery from monopolizing the viewport on first load (no JS) */
+  height: clamp(200px, 34svh, 320px);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -719,7 +728,7 @@ body {
 }
 
 .about-me-box {
-  margin: 0.5rem 0 2.5rem;
+  margin: 0 0 2.5rem;
 }
 
 .about-me-unified-content {
@@ -1672,7 +1681,6 @@ body {
   [data-theme="light"] .site-nav__links button {
     background: rgba(0, 0, 0, 0.03);
   }
-}
 
   .news-item {
     grid-template-columns: 1fr;
@@ -1687,7 +1695,7 @@ body {
   }
 
   .media-slider .swiper-slide {
-    height: 240px;
+    height: clamp(180px, 28svh, 260px);
   }
 
   .grid--skills {
