@@ -526,6 +526,32 @@ const setupReveal = () => {
   qsa("[data-animate]").forEach((el) => observer.observe(el));
 };
 
+const setupBackToTop = () => {
+  const btn = qs(".back-to-top");
+  if (!btn) return;
+
+  const prefersReducedMotion =
+    typeof window !== "undefined" &&
+    window.matchMedia &&
+    window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  const showAfter = 500;
+  const updateVisibility = () => {
+    btn.classList.toggle("visible", window.scrollY > showAfter);
+  };
+
+  window.addEventListener("scroll", updateVisibility, { passive: true });
+  updateVisibility();
+
+  btn.addEventListener("click", () => {
+    if (prefersReducedMotion) {
+      window.scrollTo(0, 0);
+      return;
+    }
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  });
+};
+
 const setYear = () => {
   const yearEl = qs("#year");
   if (yearEl) yearEl.textContent = new Date().getFullYear();
@@ -543,6 +569,7 @@ renderContact();
 setupNav();
 setupThemeToggle();
 setupReveal();
+setupBackToTop();
 setYear();
 initSlider();
 
