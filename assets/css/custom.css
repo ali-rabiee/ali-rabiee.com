@@ -175,8 +175,8 @@ video {
   --brand-cyan: #0284c7;
   --brand-orange: #ea580c;
   --brand-purple: #7c3aed;
-  --text-strong: #0f172a;
-  --text-muted: #475569;
+  --text-strong: #000000;
+  --text-muted: #000000;
   --grid-line: rgba(0, 0, 0, 0.08);
   --shadow-hero: 0 25px 80px rgba(148, 163, 184, 0.2);
   --shadow-card: 0 10px 30px rgba(148, 163, 184, 0.15);
@@ -191,6 +191,28 @@ body {
   background: radial-gradient(circle at 20% 20%, rgba(37, 99, 235, 0.05), transparent 40%),
     radial-gradient(circle at 80% 0%, rgba(8, 145, 178, 0.05), transparent 35%),
     var(--bg-deep);
+  color: var(--text-strong);
+}
+
+/* Light mode: force all text to solid black (per preference) */
+[data-theme="light"] h1,
+[data-theme="light"] h2,
+[data-theme="light"] h3,
+[data-theme="light"] h4,
+[data-theme="light"] h5,
+[data-theme="light"] h6,
+[data-theme="light"] p,
+[data-theme="light"] li,
+[data-theme="light"] a,
+[data-theme="light"] span,
+[data-theme="light"] strong,
+[data-theme="light"] button {
+  color: var(--text-strong);
+}
+
+/* Ensure section eyebrow/lead text also goes black */
+[data-theme="light"] .eyebrow,
+[data-theme="light"] .section p.lead {
   color: var(--text-strong);
 }
 
@@ -300,6 +322,81 @@ body {
 
 [data-theme="light"] .contact-social-link:hover {
   border-color: var(--brand-blue);
+}
+
+/* Light mode typography fixes (ensure text is readable on white cards) */
+[data-theme="light"] .card li,
+[data-theme="light"] .skill-card li,
+[data-theme="light"] .technical-skill-item span,
+[data-theme="light"] .education-details,
+[data-theme="light"] .experience-bullets li {
+  color: var(--text-muted);
+}
+
+[data-theme="light"] .card h3,
+[data-theme="light"] .skill-card h3,
+[data-theme="light"] .technical-skill-item strong,
+[data-theme="light"] .education-degree,
+[data-theme="light"] .experience-role {
+  color: var(--text-strong);
+}
+
+[data-theme="light"] .highlight-card__label {
+  color: var(--text-strong);
+}
+
+[data-theme="light"] .tag {
+  border-color: rgba(0, 0, 0, 0.12);
+}
+
+/* Light mode: highlights banner readability */
+[data-theme="light"] .highlights-banner {
+  background: linear-gradient(135deg, rgba(37, 99, 235, 0.06), rgba(8, 145, 178, 0.05));
+  border-color: rgba(0, 0, 0, 0.08);
+}
+
+[data-theme="light"] .highlights-banner p {
+  color: var(--text-strong);
+}
+
+/* Light mode: technical skills cards (were not part of the generic card override) */
+[data-theme="light"] .technical-skill-item {
+  background: #ffffff;
+  border-color: rgba(0, 0, 0, 0.08);
+}
+
+[data-theme="light"] .technical-skill-item:hover {
+  background: #f8fafc;
+  border-color: rgba(2, 132, 199, 0.25);
+}
+
+/* Light mode: left profile rail (profile card + links) */
+[data-theme="light"] .profile-card {
+  background: #ffffff;
+  border-color: rgba(0, 0, 0, 0.08);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+}
+
+[data-theme="light"] .profile-card__text p {
+  color: var(--text-muted);
+}
+
+[data-theme="light"] .profile-card__text p:first-child {
+  color: var(--text-strong);
+}
+
+[data-theme="light"] .profile-card__link {
+  border-color: rgba(0, 0, 0, 0.08);
+  background: rgba(0, 0, 0, 0.02);
+  color: var(--text-strong);
+}
+
+[data-theme="light"] .profile-card__link:hover {
+  border-color: rgba(2, 132, 199, 0.25);
+}
+
+[data-theme="light"] .profile-card__link .icon {
+  background: rgba(0, 0, 0, 0.05);
 }
 
 .brand-mark {
@@ -1379,32 +1476,29 @@ body {
   color: var(--text-muted);
 }
 
-.contact-hero {
+.contact-grid-2x2 {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 2rem;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.25rem;
 }
 
-.contact-primary {
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
-}
-
-.contact-main-card {
+.contact-tile {
   background: linear-gradient(135deg, rgba(79, 155, 255, 0.08), rgba(92, 244, 255, 0.06));
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: var(--radius-lg);
-  padding: 2rem;
+  padding: 1.75rem;
   display: flex;
-  align-items: flex-start;
-  gap: 1.5rem;
-  transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+  align-items: center;
+  gap: 1.25rem;
+  text-decoration: none;
+  color: var(--text-strong);
   position: relative;
   overflow: hidden;
+  min-height: 120px; /* equal card heights */
+  transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
-.contact-main-card::before {
+.contact-tile::before {
   content: "";
   position: absolute;
   top: 0;
@@ -1416,177 +1510,71 @@ body {
   transition: opacity 0.3s ease;
 }
 
-.contact-main-card:hover {
+.contact-tile:hover {
   transform: translateY(-4px);
   border-color: rgba(92, 244, 255, 0.3);
   box-shadow: 0 20px 50px rgba(79, 155, 255, 0.25);
 }
 
-.contact-main-card:hover::before {
+.contact-tile:hover::before {
   opacity: 1;
 }
 
-.contact-icon-wrapper {
-  width: 64px;
-  height: 64px;
+.contact-tile__icon {
+  width: 56px;
+  height: 56px;
   border-radius: 50%;
-  display: flex;
+  display: inline-flex;
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
-  transition: transform 0.3s ease;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  transition: transform 0.3s ease, background 0.3s ease, border-color 0.3s ease;
 }
 
-.contact-main-card:hover .contact-icon-wrapper {
-  transform: scale(1.1) rotate(5deg);
+.contact-tile:hover .contact-tile__icon {
+  transform: scale(1.08) rotate(4deg);
 }
 
-.email-icon {
-  background: linear-gradient(135deg, rgba(79, 155, 255, 0.2), rgba(92, 244, 255, 0.15));
-  color: var(--brand-cyan);
+.contact-tile__icon svg {
+  width: 26px;
+  height: 26px;
+  display: block;
 }
 
-.location-icon {
-  background: linear-gradient(135deg, rgba(255, 179, 71, 0.2), rgba(255, 138, 76, 0.15));
-  color: var(--brand-orange);
-}
-
-.contact-main-info {
-  flex: 1;
-}
-
-.contact-main-info h3 {
-  font-size: 1.2rem;
-  color: var(--text-strong);
-  margin: 0 0 0.75rem 0;
+.contact-tile__body strong {
+  display: block;
+  font-size: 1.1rem;
   font-weight: 600;
+  margin-bottom: 0.35rem;
 }
 
-.contact-main-link {
-  color: var(--brand-cyan);
-  text-decoration: none;
-  font-size: 1.05rem;
-  font-weight: 600;
-  transition: color 0.3s ease;
-  display: inline-block;
-}
-
-.contact-main-link:hover {
-  color: var(--text-strong);
-}
-
-.contact-office-text {
+.contact-tile__body span {
+  display: block;
   color: rgba(248, 251, 255, 0.85);
   font-size: 0.95rem;
-  line-height: 1.7;
-  margin: 0;
 }
 
-.contact-socials {
-  background: linear-gradient(135deg, rgba(162, 137, 255, 0.08), rgba(79, 155, 255, 0.06));
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: var(--radius-lg);
-  padding: 2rem;
+/* platform accents */
+.contact-tile.linkedin:hover { border-color: rgba(10, 102, 194, 0.5); }
+.contact-tile.github:hover { border-color: rgba(255, 255, 255, 0.35); }
+.contact-tile.x:hover { border-color: rgba(29, 161, 242, 0.5); }
+.contact-tile.email:hover { border-color: rgba(92, 244, 255, 0.45); }
+
+[data-theme="light"] .contact-tile {
+  background: #ffffff;
+  border-color: rgba(0, 0, 0, 0.08);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
 }
 
-.contact-socials-title {
-  font-size: 1.2rem;
-  color: var(--text-strong);
-  margin: 0 0 1.5rem 0;
-  font-weight: 600;
+[data-theme="light"] .contact-tile__icon {
+  background: rgba(0, 0, 0, 0.03);
+  border-color: rgba(0, 0, 0, 0.08);
 }
 
-.contact-social-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 1rem;
-}
-
-.contact-social-link {
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-  padding: 1rem 1.25rem;
-  background: rgba(255, 255, 255, 0.04);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: var(--radius-md);
-  color: var(--text-strong);
-  text-decoration: none;
-  font-weight: 600;
-  font-size: 0.95rem;
-  transition: all 0.3s ease;
-  position: relative;
-  overflow: hidden;
-}
-
-.contact-social-link::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(135deg, rgba(79, 155, 255, 0.1), transparent);
-  opacity: 0;
-  transition: opacity 0.3s ease;
-}
-
-.contact-social-link:hover::before {
-  opacity: 1;
-}
-
-.contact-social-link svg {
-  width: 24px;
-  height: 24px;
-  transition: transform 0.3s ease;
-  position: relative;
-  z-index: 1;
-}
-
-.contact-social-link span {
-  position: relative;
-  z-index: 1;
-}
-
-.contact-social-link:hover {
-  transform: translateX(4px);
-  border-color: rgba(255, 255, 255, 0.2);
-}
-
-.contact-social-link:hover svg {
-  transform: scale(1.1);
-}
-
-.contact-social-link.linkedin:hover {
-  border-color: #0a66c2;
-  background: rgba(10, 102, 194, 0.1);
-  color: #0a66c2;
-}
-
-.contact-social-link.github:hover {
-  border-color: #fff;
-  background: rgba(255, 255, 255, 0.1);
-}
-
-.contact-social-link.twitter:hover {
-  border-color: #1da1f2;
-  background: rgba(29, 161, 242, 0.1);
-  color: #1da1f2;
-}
-
-.contact-social-link.scholar:hover {
-  border-color: #4285f4;
-  background: rgba(66, 133, 244, 0.1);
-  color: #4285f4;
-}
-
-.contact-social-link.researchgate:hover {
-  border-color: #00ccbb;
-  background: rgba(0, 204, 187, 0.1);
-  color: #00ccbb;
-}
-
-.contact-social-link.orcid:hover {
-  border-color: #a6ce39;
-  background: rgba(166, 206, 57, 0.1);
-  color: #a6ce39;
+[data-theme="light"] .contact-tile__body span {
+  color: var(--text-muted);
 }
 
 .site-footer {
@@ -1733,25 +1721,17 @@ body {
     flex-direction: column;
   }
 
-  .contact-hero {
+  .contact-grid-2x2 {
     grid-template-columns: 1fr;
   }
 
-  .contact-main-card {
+  .contact-tile {
     padding: 1.5rem;
   }
 
-  .contact-icon-wrapper {
-    width: 56px;
-    height: 56px;
-  }
-
-  .contact-socials {
-    padding: 1.5rem;
-  }
-
-  .contact-social-grid {
-    grid-template-columns: 1fr;
+  .contact-tile__icon {
+    width: 52px;
+    height: 52px;
   }
 
   .highlights-grid,

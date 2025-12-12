@@ -33,7 +33,7 @@ export const siteContent = {
     links: [
       { label: "Email", icon: "mail", href: "mailto:ali.rabiee@uri.edu" },
       { label: "LinkedIn", icon: "linkedin", href: "https://www.linkedin.com/in/alirabiee97/" },
-      { label: "X (Twitter)", icon: "x", href: "https://twitter.com/alirabiee97" },
+      { label: "X", icon: "x", href: "https://x.com/alirabieeai" },
       { label: "GitHub", icon: "github", href: "https://github.com/ali-rabiee" },
       { label: "Google Scholar", icon: "scholar", href: "https://scholar.google.com/citations?user=FoWitbgAAAAJ&hl=en" },
       { label: "ResearchGate", icon: "researchgate", href: "https://www.researchgate.net/profile/Ali-Rabiee-5/research" },

@@ -255,7 +255,7 @@ const renderSkills = () => {
 const renderProjects = () => {
   qs("#projects").innerHTML = `
     <header>
-      <h2>Featured Work</h2>
+      <h2>Projects</h2>
       <p class="lead">End-to-end systems spanning shared autonomy, computer vision, signal processing, and generative AI—from research prototypes to production deployments.</p>
     </header>
     <div class="projects-showcase">
@@ -400,63 +400,41 @@ const renderContact = () => {
       <h2>Contact</h2>
       <p class="lead">${contact.availability}</p>
     </header>
-    
-    <div class="contact-hero">
-      <div class="contact-primary">
-        <div class="contact-main-card">
-          <div class="contact-icon-wrapper email-icon">
-            <svg viewBox="0 0 24 24" width="32" height="32" fill="currentColor">
-              <path d="M3 5h18a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2Zm0 2v.511l9 5.4 9-5.4V7H3Zm18 10V9.489l-8.422 5.05a2 2 0 0 1-2.156 0L2 9.489V17h19Z"/>
-            </svg>
-          </div>
-          <div class="contact-main-info">
-            <h3>Email</h3>
-            <a href="mailto:${contact.email}" class="contact-main-link">${contact.email}</a>
-          </div>
+
+    <div class="contact-grid-2x2">
+      <a href="mailto:${contact.email}" class="contact-tile email" aria-label="Email">
+        <span class="contact-tile__icon">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M3 5h18a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2Zm0 2v.511l9 5.4 9-5.4V7H3Zm18 10V9.489l-8.422 5.05a2 2 0 0 1-2.156 0L2 9.489V17h19Z"/></svg>
+        </span>
+        <div class="contact-tile__body">
+          <strong>Email</strong>
+          <span>${contact.email}</span>
         </div>
-        
-        <div class="contact-main-card">
-          <div class="contact-icon-wrapper location-icon">
-            <svg viewBox="0 0 24 24" width="32" height="32" fill="currentColor">
-              <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
-            </svg>
-          </div>
-          <div class="contact-main-info">
-            <h3>Office</h3>
-            <p class="contact-office-text">${contact.office.join("<br />")}</p>
-          </div>
+      </a>
+
+      <a href="https://www.linkedin.com/in/alirabiee97/" target="_blank" rel="noopener" class="contact-tile linkedin" aria-label="LinkedIn">
+        <span class="contact-tile__icon">${ICONS.linkedin}</span>
+        <div class="contact-tile__body">
+          <strong>LinkedIn</strong>
+          <span>@alirabiee97</span>
         </div>
-      </div>
-      
-      <div class="contact-socials">
-        <h3 class="contact-socials-title">Connect With Me</h3>
-        <div class="contact-social-grid">
-          <a href="https://www.linkedin.com/in/alirabiee97/" target="_blank" rel="noopener" class="contact-social-link linkedin">
-            ${ICONS.linkedin}
-            <span>LinkedIn</span>
-          </a>
-          <a href="https://github.com/ali-rabiee" target="_blank" rel="noopener" class="contact-social-link github">
-            ${ICONS.github}
-            <span>GitHub</span>
-          </a>
-          <a href="https://twitter.com/alirabiee97" target="_blank" rel="noopener" class="contact-social-link twitter">
-            ${ICONS.x}
-            <span>Twitter/X</span>
-          </a>
-          <a href="https://scholar.google.com/citations?user=FoWitbgAAAAJ&hl=en" target="_blank" rel="noopener" class="contact-social-link scholar">
-            ${ICONS.scholar}
-            <span>Google Scholar</span>
-          </a>
-          <a href="https://www.researchgate.net/profile/Ali-Rabiee-5/research" target="_blank" rel="noopener" class="contact-social-link researchgate">
-            ${ICONS.researchgate}
-            <span>ResearchGate</span>
-          </a>
-          <a href="https://orcid.org/0000-0001-6800-6247" target="_blank" rel="noopener" class="contact-social-link orcid">
-            ${ICONS.orcid}
-            <span>ORCID</span>
-          </a>
+      </a>
+
+      <a href="https://github.com/ali-rabiee" target="_blank" rel="noopener" class="contact-tile github" aria-label="GitHub">
+        <span class="contact-tile__icon">${ICONS.github}</span>
+        <div class="contact-tile__body">
+          <strong>GitHub</strong>
+          <span>@ali-rabiee</span>
         </div>
-      </div>
+      </a>
+
+      <a href="https://x.com/alirabieeai" target="_blank" rel="noopener" class="contact-tile x" aria-label="X">
+        <span class="contact-tile__icon">${ICONS.x}</span>
+        <div class="contact-tile__body">
+          <strong>X</strong>
+          <span>@alirabieeai</span>
+        </div>
+      </a>
     </div>
   `;
 };
