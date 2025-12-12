@@ -516,6 +516,22 @@ const setupNav = () => {
   qsa("main section").forEach((section) => observer.observe(section));
 };
 
+const setupThemeToggle = () => {
+  const themeToggle = qs("#theme-toggle");
+  if (!themeToggle) return;
+
+  const saved = localStorage.getItem("theme");
+  const initial = saved || "dark";
+  document.documentElement.setAttribute("data-theme", initial);
+
+  themeToggle.addEventListener("click", () => {
+    const current = document.documentElement.getAttribute("data-theme") || "dark";
+    const next = current === "dark" ? "light" : "dark";
+    document.documentElement.setAttribute("data-theme", next);
+    localStorage.setItem("theme", next);
+  });
+};
+
 const setupReveal = () => {
   const observer = new IntersectionObserver(
     (entries) => {
@@ -548,6 +564,7 @@ renderPublications();
 renderHonors();
 renderContact();
 setupNav();
+setupThemeToggle();
 setupReveal();
 setYear();
 initSlider();
