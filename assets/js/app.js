@@ -454,10 +454,11 @@ const initSlider = () => {
     slidesPerView: 1,
     spaceBetween: 20,
     breakpoints: {
-      640: { slidesPerView: 1 },
-      768: { slidesPerView: 2 },
-      1024: { slidesPerView: 3 },
+      /* Keep mobile to 1 slide; many phones/tablets hit 768px+ */
+      960: { slidesPerView: 2 },
+      1200: { slidesPerView: 3 },
     },
+    watchOverflow: true,
   });
 };
 

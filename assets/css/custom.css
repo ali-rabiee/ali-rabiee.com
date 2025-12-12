@@ -1622,6 +1622,98 @@ body {
 
   .page-layout {
     padding: 0 1.5rem;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  /* Mobile overflow guards (prevent horizontal scrolling / text spilling off-screen) */
+  #page,
+  main,
+  .section,
+  .profile-rail,
+  .profile-card,
+  .card {
+    min-width: 0;
+    max-width: 100%;
+  }
+
+  .profile-card__text,
+  .profile-card__text p,
+  .about-me-content p,
+  .experience-bullets li,
+  .education-details,
+  .project-showcase-description,
+  .contact-tile__body span {
+    overflow-wrap: anywhere;
+    word-break: break-word;
+  }
+
+  /* Mobile: make the profile rail a compact intro card above the content */
+  .profile-rail {
+    position: relative;
+    top: auto;
+    max-height: none;
+    overflow: visible;
+    padding-right: 0;
+  }
+
+  .profile-card {
+    padding: 1.25rem;
+    gap: 1rem;
+  }
+
+  .profile-card__identity {
+    display: grid;
+    grid-template-columns: 96px minmax(0, 1fr);
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .profile-card__media img {
+    width: 96px;
+    height: 96px;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+  }
+
+  .profile-card__text p:first-child {
+    font-size: 1.35rem;
+  }
+
+  /* Mobile: keep the intro card compact (avoid huge text blocks) */
+  .profile-card__text p:nth-child(n + 3) {
+    display: none;
+  }
+
+  /* Mobile: circular icon buttons in one row */
+  .profile-card__links {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    padding-bottom: 0.25rem;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .profile-card__link {
+    width: 44px;
+    height: 44px;
+    justify-content: center;
+    padding: 0;
+    gap: 0;
+    border-radius: 999px;
+    font-size: 0.95rem;
+    flex: 0 0 auto;
+  }
+
+  .profile-card__link span:not(.icon) {
+    display: none;
+  }
+
+  .profile-card__link .icon {
+    width: 30px;
+    height: 30px;
   }
 
   .header-inner {
@@ -1696,7 +1788,12 @@ body {
   }
 
   .media-slider .swiper-slide {
-    height: clamp(180px, 28svh, 260px);
+    height: auto;
+    aspect-ratio: 1 / 1;
+  }
+
+  .media-slider .swiper {
+    aspect-ratio: 1 / 1;
   }
 
   .grid--skills {
