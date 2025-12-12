@@ -1716,6 +1716,16 @@ body {
     height: 30px;
   }
 
+  /* Mobile: avoid justified text (causes big word gaps) */
+  .about-me-content p,
+  .highlights-banner p,
+  .education-details,
+  .experience-bullets li {
+    text-align: left;
+    hyphens: auto;
+    text-justify: auto;
+  }
+
   .header-inner {
     display: flex;
     flex-wrap: wrap;
