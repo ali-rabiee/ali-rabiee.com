@@ -537,7 +537,6 @@ renderHighlights();
 renderProfileRail();
 renderSkills();
 renderProjects();
-renderNews();
 renderPublications();
 renderHonors();
 renderContact();
