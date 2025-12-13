@@ -1971,7 +1971,7 @@ body {
 .back-to-top {
   position: fixed;
   bottom: 2rem;
-  right: 17rem;
+  right: 5rem;
   width: 64px;
   height: 64px;
   background: linear-gradient(135deg, var(--brand-blue), var(--brand-cyan));
