@@ -97,17 +97,17 @@ export const siteContent = {
           "Integrated LLM-based Inner Monologue to enable emotion-aware, expressive robot behaviors and more transparent human–robot interaction.",
         ],
       },
-      {
-        role: "Machine Learning Engineer",
-        period: "Mar 2021 - Jul 2022",
-        organization: "HARA AI (hara.ai)",
-        bullets: [
-          "Designed and implemented custom computer vision architectures for vehicle analysis tasks including model recognition, color detection, and fine-grained damage assessment.",
-          "Improved and optimized vision-based damage and cost estimation models, raising mAP@0.5 IoU from 0.74 to 0.91 and boosting classification accuracy by 15%, while sustaining 45 ms/image inference in production.",
-          "Deployed models via MLflow for real-time, scalable vehicle assessment; curated large-scale image datasets and built streamlined annotation pipelines to improve data quality and training efficiency.",
-          "Led A/B testing and error analysis to iteratively refine model performance and reduce false positives by 12%; presented results to stakeholders, highlighting time savings and improved evaluation consistency.",
-        ],
-      },
+      // {
+      //   role: "Machine Learning Engineer",
+      //   period: "Mar 2021 - Jul 2022",
+      //   organization: "HARA AI (hara.ai)",
+      //   bullets: [
+      //     "Designed and implemented custom computer vision architectures for vehicle analysis tasks including model recognition, color detection, and fine-grained damage assessment.",
+      //     "Improved and optimized vision-based damage and cost estimation models, raising mAP@0.5 IoU from 0.74 to 0.91 and boosting classification accuracy by 15%, while sustaining 45 ms/image inference in production.",
+      //     "Deployed models via MLflow for real-time, scalable vehicle assessment; curated large-scale image datasets and built streamlined annotation pipelines to improve data quality and training efficiency.",
+      //     "Led A/B testing and error analysis to iteratively refine model performance and reduce false positives by 12%; presented results to stakeholders, highlighting time savings and improved evaluation consistency.",
+      //   ],
+      // },
       {
         role: "Machine Learning Researcher",
         period: "Sep 2020 - May 2022",
@@ -337,17 +337,17 @@ export const siteContent = {
   ],
   experience: {
     work: [
-      {
-        role: "Machine Learning Engineer",
-        org: "HARA AI",
-        period: "2021 – 2022",
-        location: "Tehran, Iran",
-        bullets: [
-          "Built car-damage detection & cost estimation models for insurance workflows.",
-          "Optimized computer-vision stack for vehicle identification, color detection, and claims automation.",
-          "Collaborated with domain experts to align ML outputs with regulatory expectations.",
-        ],
-      },
+      // {
+      //   role: "Machine Learning Engineer",
+      //   org: "HARA AI",
+      //   period: "2021 – 2022",
+      //   location: "Tehran, Iran",
+      //   bullets: [
+      //     "Built car-damage detection & cost estimation models for insurance workflows.",
+      //     "Optimized computer-vision stack for vehicle identification, color detection, and claims automation.",
+      //     "Collaborated with domain experts to align ML outputs with regulatory expectations.",
+      //   ],
+      // },
       {
         role: "Teaching Assistant",
         org: "Sharif University of Technology",
